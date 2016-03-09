@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="validation-query">
+        <![CDATA[
+        SELECT 1
+        ]]>
+    </entry>
+
+    <entry key="users-by-username-query">
+        <![CDATA[
+          SELECT
+            id AS username,
+            password,
+            enabled
+          FROM
+            accounts
+          WHERE
+            id = ?
+        ]]>
+    </entry>
+
+    <entry key="authorities-by-username-query">
+        <![CDATA[
+          SELECT
+            id AS username,
+            CASE role
+              WHEN '1' THEN 'ROLE_ADMIN'
+              WHEN '2' THEN 'ROLE_USER'
+            END authority
+          FROM
+            accounts
+          WHERE
+            id = ?
+        ]]>
+    </entry>
+
+    <entry key="select-all-user-info">
+        <![CDATA[
+          SELECT
+            id,
+            name,
+            enabled,
+            CASE role
+              WHEN '1' THEN 'ROLE_ADMIN'
+              WHEN '2' THEN 'ROLE_USER'
+            END authority
+          FROM
+            accounts
+          WHERE
+            id = ?
+        ]]>
+    </entry>
+
+    <entry key="select-user-info">
+        <![CDATA[
+        SELECT
+            id,
+            name,
+            enabled,
+            CASE role
+              WHEN '1' THEN 'ROLE_ADMIN'
+              WHEN '2' THEN 'ROLE_USER'
+            END authority
+        FROM
+            accounts
+        WHERE
+            id = ?
+        ]]>
+    </entry>
+</properties>

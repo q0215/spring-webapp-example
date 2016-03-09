@@ -1,0 +1,10 @@
+.all {
+    width: 900px;
+    margin: auto;
+}
+body {
+    padding-top: 60px;
+}
+footer {
+    padding-top: 10px;
+}
