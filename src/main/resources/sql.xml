@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <!-- 検証SQL -->
+    <entry key="validation-query">
+        <![CDATA[
+        SELECT 1
+        ]]>
+    </entry>
+    <!-- SpringSecurityログインSQL -->
+    <entry key="users-by-username-query">
+        <![CDATA[
+          SELECT
+            id AS username,
+            password,
+            enabled
+          FROM
+            accounts
+          WHERE
+            id = ?
+        ]]>
+    </entry>
+    <!-- SpringSecurity権限SQL -->
+    <entry key="authorities-by-username-query">
+        <![CDATA[
+          SELECT
+            id AS username,
+            CASE role
+              WHEN '1' THEN 'ROLE_ADMIN'
+              WHEN '2' THEN 'ROLE_USER'
+            END authority
+          FROM
+            accounts
+          WHERE
+            id = ?
+        ]]>
+    </entry>
+    <!-- ユーザ情報一覧取得 -->
+    <entry key="select-all-user-info">
+        <![CDATA[
+          SELECT
+            id,
+            name,
+            enabled,
+            CASE role
+              WHEN '1' THEN 'ROLE_ADMIN'
+              WHEN '2' THEN 'ROLE_USER'
+            END authority,
+            TO_CHAR(registered, 'YYYY/MM/DD HH24:MI:SS') AS registered
+          FROM
+            accounts
+        ]]>
+    </entry>
+    <!-- ユーザ情報取得 -->
+    <entry key="select-user-info">
+        <![CDATA[
+        SELECT
+            id,
+            name,
+            enabled,
+            CASE role
+              WHEN '1' THEN 'ROLE_ADMIN'
+              WHEN '2' THEN 'ROLE_USER'
+            END authority,
+            TO_CHAR(registered, 'YYYY/MM/DD HH24:MI:SS') AS registered
+        FROM
+            accounts
+        WHERE
+            id = ?
+        ]]>
+    </entry>
+</properties>

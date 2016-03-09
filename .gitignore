@@ -1,0 +1,8 @@
+# 通常設定
+.settings
+bin
+target
+.classpath
+.project
+.springBeans
+!.gitkeep
