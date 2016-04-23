@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -25,8 +26,8 @@ import q9029.app.spring.service.IUsersService;
  * @see HttpSession
  */
 @Controller
-@RequestMapping(value = "/user")
-class RoleUserController {
+@RequestMapping(value = "/{id:[a-z0-9]{4,10}}")
+class AccountController {
 
     @Autowired
     private Properties applicationProperties;
@@ -42,9 +43,8 @@ class RoleUserController {
      * @return user.jsp
      */
     @RequestMapping(method = RequestMethod.GET)
-    String doGet(HttpServletRequest request, HttpSession session) {
-        // @PathVariable String userId
-        request.setAttribute("user", service.getUserInfo("q9029"));
+    String doGet(HttpServletRequest request, HttpSession session, @PathVariable String id) {
+        request.setAttribute("user", service.getUserInfo(id));
         return applicationProperties.getProperty("view-user");
     }
 }

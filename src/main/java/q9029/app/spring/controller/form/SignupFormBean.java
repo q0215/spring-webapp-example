@@ -5,7 +5,7 @@ import javax.validation.constraints.Size;
 
 public class SignupFormBean extends FormBean {
 
-    @Pattern(regexp = "[a-zA-Z0-9]*", message = "{q9029.animaps.Pattern.message}")
+    @Pattern(regexp = "[a-z0-9]{4,10}", message = "{q9029.animaps.Pattern.message}")
     @Size(min = 6, max = 20, message = "{q9029.animaps.Size.message}")
     private String id;
 

@@ -49,16 +49,17 @@
     <aop:aspectj-autoproxy/>
 
     <security:http auto-config="true" use-expressions="true">
-        <security:expression-handler ref="webExpressionHandler"/>
         <security:intercept-url pattern="/" access="isAuthenticated()"/>
-        <security:intercept-url pattern="/login" access="!isAuthenticated()"/>
-        <security:intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')"/>
-        <security:intercept-url pattern="/logout" access="isAuthenticated()"/>
-        <security:intercept-url pattern="/user" access="hasRole('ROLE_USER')"/>
-        <security:intercept-url pattern="/resources/**" access="permitAll"/>
         <security:intercept-url pattern="/**" access="permitAll"/>
-        <security:form-login login-page="/login" login-processing-url="/login" username-parameter="username" password-parameter="password" default-target-url="/" always-use-default-target="true"/>
+        <security:intercept-url pattern="/signup" access="!isAuthenticated()"/>
+        <security:intercept-url pattern="/login" access="!isAuthenticated()"/>
+        <security:intercept-url pattern="/logout" access="isAuthenticated()"/>
+        <security:intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')"/>
+        <security:intercept-url pattern="/{id:[a-z0-9]{4,10}}" access="permitAll"/>
+        <security:intercept-url pattern="/resources/**" access="permitAll"/>
+        <security:form-login login-page="/login" login-processing-url="/login" username-parameter="username" password-parameter="password" default-target-url="/"/>
         <security:logout logout-url="/logout" logout-success-url="/login" invalidate-session="false" delete-cookies="JSESSIONID, remember-me"/>
+        <security:expression-handler ref="webExpressionHandler"/>
         <security:access-denied-handler error-page="/error"/>
         <security:csrf/>
         <security:remember-me use-secure-cookie="true"/>

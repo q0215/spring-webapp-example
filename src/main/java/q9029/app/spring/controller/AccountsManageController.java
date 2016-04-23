@@ -4,11 +4,8 @@ import java.util.Properties;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.encoding.ShaPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Validator;
 import org.springframework.web.bind.WebDataBinder;
@@ -17,7 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import q9029.app.spring.controller.form.RoleAdminFormBean;
+import q9029.app.spring.controller.form.AccountsManageFormBean;
 import q9029.app.spring.service.IUsersService;
 
 /**
@@ -27,7 +24,7 @@ import q9029.app.spring.service.IUsersService;
  */
 @Controller
 @RequestMapping(value = "/admin")
-class RoleAdminController {
+class AccountsManageController {
 
     @Autowired
     private Properties applicationProperties;
@@ -44,8 +41,8 @@ class RoleAdminController {
     }
 
     @ModelAttribute("formBean")
-    RoleAdminFormBean initForm() {
-        RoleAdminFormBean formBean = new RoleAdminFormBean(applicationProperties.getProperty("view-admin"));
+    AccountsManageFormBean initForm() {
+        AccountsManageFormBean formBean = new AccountsManageFormBean(applicationProperties.getProperty("view-admin"));
         return formBean;
     }
 
@@ -57,7 +54,7 @@ class RoleAdminController {
      * @return 管理者画面
      */
     @RequestMapping(method = RequestMethod.GET)
-    String doGet(HttpServletRequest request, HttpSession session, @ModelAttribute("formBean") RoleAdminFormBean formBean) {
+    String doGet(HttpServletRequest request, @ModelAttribute("formBean") AccountsManageFormBean formBean) {
         request.setAttribute("users", service.getAllUsersInfo());
         return applicationProperties.getProperty("view-admin");
     }
@@ -70,9 +67,7 @@ class RoleAdminController {
      * @return 管理者画面
      */
     @RequestMapping(method = RequestMethod.POST)
-    String doPost(@ModelAttribute("formBean") @Valid RoleAdminFormBean formBean) {
-        ShaPasswordEncoder encoder = new ShaPasswordEncoder(256);
-        formBean.setHash(encoder.encodePassword(formBean.getEncode() + "{" + applicationProperties.getProperty("salt-source") + "}", null));
+    String doPost() {
         return applicationProperties.getProperty("view-admin");
     }
 }

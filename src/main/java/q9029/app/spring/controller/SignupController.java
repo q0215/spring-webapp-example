@@ -47,6 +47,7 @@ class SignupController {
 
     @RequestMapping(method = RequestMethod.POST)
     public String doPost(@ModelAttribute("formBean") @Valid SignupFormBean formBean) {
+        applicationProperties.getProperty("reserved-words", null);
         return "redirect:/login";
     }
 

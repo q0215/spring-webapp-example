@@ -4,7 +4,6 @@ import java.security.Principal;
 import java.util.Properties;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,7 +23,7 @@ class IndexController {
     IUsersService service;
 
     @RequestMapping(method = RequestMethod.GET)
-    String doGet(HttpServletRequest request, HttpSession session, Principal principal) {
+    String doGet(HttpServletRequest request, Principal principal) {
     	request.setAttribute("user", service.getUserInfo(principal.getName()));
         return applicationProperties.getProperty("view-index");
     }

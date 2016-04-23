@@ -12,6 +12,8 @@ public final class UsersDto extends Dto {
 
     private String authority;
 
+    private String registered;
+
     public String getId() {
         return id;
     }
@@ -50,5 +52,13 @@ public final class UsersDto extends Dto {
 
     public void setAuthority(String authority) {
         this.authority = authority;
+    }
+
+    public String getRegistered() {
+        return registered;
+    }
+
+    public void setRegistered(String registered) {
+        this.registered = registered;
     }
 }
