@@ -4,7 +4,7 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
-            <a class="brand" href="<c:url value='/'/>">SpringFramework</a>
+            <a class="brand" href="<c:url value='/'/>">webapp-model</a>
             <ul class="nav"></ul>
             <div class="pull-right">
                 <ul class="nav">

@@ -46,7 +46,7 @@
               WHEN '1' THEN 'ROLE_ADMIN'
               WHEN '2' THEN 'ROLE_USER'
             END authority,
-            registered
+            TO_CHAR(registered, 'YYYY/MM/DD HH:MI:DD') AS registered
           FROM
             accounts
         ]]>
@@ -62,7 +62,7 @@
               WHEN '1' THEN 'ROLE_ADMIN'
               WHEN '2' THEN 'ROLE_USER'
             END authority,
-            registered
+            TO_CHAR(registered, 'YYYY/MM/DD HH:MI:DD') AS registered
         FROM
             accounts
         WHERE
