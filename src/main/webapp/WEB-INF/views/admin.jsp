@@ -10,10 +10,21 @@
         <table>
             <c:forEach var="user" items="${users}">
                 <tr>
-                    <td>${user.id}</td>
+                    <td><a href="<c:url value='/${user.id}'/>">${user.id}</a></td>
                     <td>${user.name}</td>
                     <td>${user.authority}</td>
                     <td>${user.enabled}</td>
+                    <td>${user.registered}</td>
+                    <td>
+                        <c:choose>
+                            <c:when test="${user.enabled}">
+                                <button>凍結</button>
+                            </c:when>
+                            <c:otherwise>
+                                <button>凍結解除</button>
+                            </c:otherwise>
+                        </c:choose>
+                    </td>
                 </tr>
             </c:forEach>
         </table>

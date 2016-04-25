@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SpringFramework</title>
+    <title>webapp-model</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="<c:url value='/resources/favicon.ico'/>"/>
 

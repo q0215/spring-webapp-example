@@ -8,7 +8,7 @@ public final class UsersDto extends Dto {
 
     private String roleId;
 
-    private String enabled;
+    private boolean enabled;
 
     private String authority;
 
@@ -38,11 +38,11 @@ public final class UsersDto extends Dto {
         this.roleId = roleId;
     }
 
-    public String getEnabled() {
+    public boolean isEnabled() {
         return enabled;
     }
 
-    public void setEnabled(String enabled) {
+    public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
 
