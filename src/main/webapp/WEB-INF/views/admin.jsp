@@ -13,7 +13,16 @@
                     <td><a href="<c:url value='/${user.id}'/>">${user.id}</a></td>
                     <td>${user.name}</td>
                     <td>${user.authority}</td>
-                    <td>${user.enabled}</td>
+                    <td>
+                        <c:choose>
+                            <c:when test="${user.enabled}">
+                                有効
+                            </c:when>
+                            <c:otherwise>
+                                凍結中
+                            </c:otherwise>
+                        </c:choose>
+                    </td>
                     <td>${user.registered}</td>
                     <td>
                         <c:choose>
