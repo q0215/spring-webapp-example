@@ -22,7 +22,8 @@
 
     <context:annotation-config/>
 
-    <resources mapping="/resources/**" location="/resources/"/>
+    <resources mapping="/css/**" location="/css"/>
+    <resources mapping="/img/**" location="/img"/>
 
     <!-- Properties -->
     <beans:bean id="applicationProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">

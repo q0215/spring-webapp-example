@@ -5,10 +5,10 @@
 <head>
     <title>webapp-model</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="<c:url value='/resources/favicon.ico'/>"/>
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="<c:url value='/favicon.ico'/>"/>
 
-    <link href="<c:url value='/resources/css/mystyle.css'/>" rel="stylesheet">
-    <link href="<c:url value='/resources/css/bootstrap.min.css'/>" rel="stylesheet">
+    <link href="<c:url value='/css/mystyle.css'/>" rel="stylesheet">
+    <link href="<c:url value='/css/bootstrap.min.css'/>" rel="stylesheet">
 
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
