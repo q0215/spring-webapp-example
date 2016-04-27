@@ -24,6 +24,7 @@
 
     <resources mapping="/css/**" location="/css/"/>
     <resources mapping="/img/**" location="/img/"/>
+    <resources mapping="/js/**" location="/js/"/>
 
     <!-- Properties -->
     <beans:bean id="applicationProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
