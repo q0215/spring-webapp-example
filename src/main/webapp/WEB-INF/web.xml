@@ -28,7 +28,7 @@
 
     <filter>
         <filter-name>httpsFilterChain</filter-name>
-        <filter-class>q9029.app.filter.HttpsEnforceFilter</filter-class>
+        <filter-class>com.github.q9029.webapp.filter.HttpsEnforceFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>httpsFilterChain</filter-name>

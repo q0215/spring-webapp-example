@@ -12,7 +12,7 @@
     </appender>
 
     <!-- アプリケーション -->
-    <logger name="q9029.app.spring">
+    <logger name="com.github.q9029.webapp">
         <level value="debug"/>
     </logger>
 

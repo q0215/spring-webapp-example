@@ -39,14 +39,14 @@
     <context:property-placeholder properties-ref="applicationProperties"/>
 
     <!-- ExceptionHandler  -->
-    <beans:bean class="q9029.app.spring.controller.handler.ExceptionResolver"/>
+    <beans:bean class="com.github.q9029.webapp.controller.handler.ExceptionResolver"/>
 
     <!-- beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" -->
         <!-- beans:property name="prefix" value="/WEB-INF/views/" / -->
         <!-- beans:property name="suffix" value=".jsp"/ -->
     <!-- /beans:bean -->
 
-    <context:component-scan base-package="q9029.app.spring"/>
+    <context:component-scan base-package="com.github.q9029.webapp"/>
 
     <aop:aspectj-autoproxy/>
 
@@ -109,7 +109,7 @@
         <beans:property name="dataSource" ref="dataSource"/>
     </beans:bean>
     <aop:config>
-        <aop:advisor pointcut="execution(* q9029.app.spring.service.*.*(..))" advice-ref="transactionAdvice"/>
+        <aop:advisor pointcut="execution(* com.github.q9029.webapp.service.*.*(..))" advice-ref="transactionAdvice"/>
     </aop:config>
     <tx:advice id="transactionAdvice" transaction-manager="transactionManager">
         <tx:attributes>
