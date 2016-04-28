@@ -28,6 +28,6 @@ button.dropdown-link:active, button.dropdown-link:hover {
     color: #262626;
     background-color: #f5f5f5 !important;
 }
-a:active, a:hover {
+a:focus, a:active, a:hover {
     outline: 0;
 }
