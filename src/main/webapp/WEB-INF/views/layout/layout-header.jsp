@@ -13,7 +13,7 @@
                     <li><a class="dropdown-toggle" data-toggle="dropdown" href="#"><sec:authentication property="principal.username"/></a>
                         <ul class="dropdown-menu">
                             <li><a href="/<sec:authentication property='principal.username'/>">Your profile</a></li>
-                            <li><a href="#logout">Logout</a></li>
+                            <li><button type="button" class="dropdown-link">ログアウト</button></li>
                         </ul>
                     </li>
                     <form id="logout-form" method="post" action="<c:url value='/logout'/>" style="display:none">
