@@ -64,7 +64,7 @@
         <security:expression-handler ref="webExpressionHandler"/>
         <security:access-denied-handler error-page="/error"/>
         <security:csrf/>
-        <security:remember-me use-secure-cookie="true"/>
+        <security:remember-me use-secure-cookie="true" token-validity-seconds="#{60*3}"/>
         <security:headers/>
     </security:http>
 

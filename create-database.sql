@@ -26,6 +26,7 @@ INSERT INTO accounts VALUES (
   -- 表示名
   '管理者',
   -- パスワード
+  -- SHA256(password + "{"  + salt-source + "}")
   '********************',
   -- 有効フラグ
   true,
@@ -40,6 +41,7 @@ INSERT INTO accounts VALUES (
   -- 表示名
   'ユーザ',
   -- パスワード
+  -- SHA256(password + "{"  + salt-source + "}")
   '********************',
   -- 有効フラグ
   true,

@@ -39,3 +39,8 @@ ul.dropdown-menu {
     padding-top: 5px;
     padding-bottom: 5px;
 }
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}

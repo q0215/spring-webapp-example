@@ -2,28 +2,18 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:import url="/WEB-INF/views/layout/layout.jsp">
     <c:param name="content">
-
-        <h1>Login</h1>
-
-        <form name="loginForm" action="<c:url value='/login'/>" method="post">
-            <table>
-                <tr>
-                    <td>ID</td>
-                    <td><input type="text" name="username" value=""></td>
-                </tr>
-                <tr>
-                    <td>Password</td>
-                    <td><input type="password" name="password"/></td>
-                </tr>
-                <tr>
-                    <td align="right"><input type="checkbox" name="remember-me" value="1"/></td>
-                    <td>Remember Me</td>
-                </tr>
-                <tr><td colspan="2"></td></tr>
-                <tr  align="center">
-                    <td colspan="2"><input class="btn btn-primary" type="submit" value="Login"/></td>
-                </tr>
-            </table>
+        <form name="loginForm" action="<c:url value='/login'/>" method="post" class="form-signin">
+            <h2 class="form-signin-heading">Please sign in</h2>
+            <label for="inputId" class="sr-only">ID</label>
+            <input type="text" id="inputId" name="username" class="form-control" placeholder="ID" required/>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required/>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="remember-me" checked/> Remember Me
+                </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         </form>
     </c:param>
