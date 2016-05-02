@@ -31,3 +31,11 @@ button.dropdown-link:active, button.dropdown-link:hover {
 a:focus, a:active, a:hover {
     outline: 0 !important;
 }
+li.dropdown-header {
+    padding: 3px 20px;
+    color: #767676;
+}
+ul.dropdown-menu {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}

@@ -55,7 +55,7 @@
         <security:intercept-url pattern="/signup" access="!isAuthenticated()"/>
         <security:intercept-url pattern="/login" access="!isAuthenticated()"/>
         <security:intercept-url pattern="/logout" access="isAuthenticated()"/>
-        <security:intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')"/>
+        <security:intercept-url pattern="/accountsmanager" access="hasRole('ROLE_ADMIN')"/>
         <!-- security:intercept-url pattern="/resources/**" access="permitAll"/ -->
         <!-- security:intercept-url pattern="/{id:[a-z0-9]{4,10}}" access="permitAll"/ -->
         <security:intercept-url pattern="/**" access="permitAll"/>

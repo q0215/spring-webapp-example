@@ -23,7 +23,7 @@ import com.github.q9029.webapp.service.IUsersService;
  * @author q9029
  */
 @Controller
-@RequestMapping(value = "/admin")
+@RequestMapping(value = "/accountsmanager")
 class AccountsManageController {
 
     @Autowired
