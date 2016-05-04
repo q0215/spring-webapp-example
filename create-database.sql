@@ -14,9 +14,9 @@ CREATE TABLE accounts (
   -- 権限区分
   role integer NOT NULL,
   -- 登録日時
-  registered timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  registered timestamp(0) with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
   -- 更新日時
-  updated timestamp with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP
+  updated timestamp(0) with time zone NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 -- 管理者アカウント作成
