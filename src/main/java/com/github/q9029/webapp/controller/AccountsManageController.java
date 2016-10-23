@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.github.q9029.webapp.controller.form.AccountsManageFormBean;
-import com.github.q9029.webapp.service.IUsersService;
+import com.github.q9029.webapp.controller.bean.AccountsManageFormBean;
+import com.github.q9029.webapp.service.UsersService;
 
 /**
  * 管理者画面コントローラー
@@ -30,7 +30,7 @@ class AccountsManageController {
     private Properties applicationProperties;
 
     @Autowired
-    IUsersService service;
+    UsersService service;
 
     @Resource(name = "validator")
     private Validator validator;
@@ -42,7 +42,7 @@ class AccountsManageController {
 
     @ModelAttribute("formBean")
     AccountsManageFormBean initForm() {
-        AccountsManageFormBean formBean = new AccountsManageFormBean(applicationProperties.getProperty("view-admin"));
+        AccountsManageFormBean formBean = new AccountsManageFormBean();
         return formBean;
     }
 

@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.github.q9029.webapp.controller.form.SignupFormBean;
+import com.github.q9029.webapp.controller.bean.SignupFormBean;
 
 @Controller
 @RequestMapping(value = "/signup")
@@ -36,7 +36,7 @@ class SignupController {
 
     @ModelAttribute("formBean")
     public SignupFormBean initForm() {
-        SignupFormBean formBean = new SignupFormBean(applicationProperties.getProperty("view-signup"));
+        SignupFormBean formBean = new SignupFormBean();
         return formBean;
     }
 
@@ -59,7 +59,7 @@ class SignupController {
      */
     @ExceptionHandler(BindException.class)
     final ModelAndView handleBindException(BindException e) {
-        ModelAndView view = new ModelAndView(e.getTarget().toString());
+        ModelAndView view = new ModelAndView(applicationProperties.getProperty("view-admin"));
         view.addAllObjects(e.getBindingResult().getModel());
         return view;
     }

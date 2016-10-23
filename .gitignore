@@ -1,8 +1,11 @@
 # 通常設定
-.settings
-bin
-target
+.settings/*
+bin/*
+target/*
+src/test/java/*
+src/test/resources/*
 .classpath
 .project
 .springBeans
 !.gitkeep
+

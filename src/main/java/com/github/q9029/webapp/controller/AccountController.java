@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.github.q9029.webapp.service.IUsersService;
+import com.github.q9029.webapp.service.UsersService;
 
 /**
  * This class is a controller for user has the role user.
@@ -21,7 +21,7 @@ import com.github.q9029.webapp.service.IUsersService;
  *
  * @author q9029
  * @see ExceptionController
- * @see IUsersService
+ * @see UsersService
  * @see HttpServletRequest
  * @see HttpSession
  */
@@ -33,7 +33,7 @@ class AccountController {
     private Properties applicationProperties;
 
     @Autowired
-    IUsersService service;
+    UsersService service;
 
     /**
      * hasRole('ROLE_USER')

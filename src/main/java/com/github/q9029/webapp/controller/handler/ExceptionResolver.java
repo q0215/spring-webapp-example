@@ -20,7 +20,7 @@ public class ExceptionResolver implements HandlerExceptionResolver {
     @Override
     public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, Object object, Exception e) {
 
-    	log.info("例外が発生しました");
+        log.info("例外が発生しました");
         return new ModelAndView(applicationProperties.getProperty("view-error"));
     }
 }

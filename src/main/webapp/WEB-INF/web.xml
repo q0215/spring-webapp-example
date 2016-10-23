@@ -26,14 +26,16 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
+<!--
     <filter>
         <filter-name>httpsFilterChain</filter-name>
-        <filter-class>com.github.q9029.webapp.filter.HttpsEnforceFilter</filter-class>
+        <filter-class>com.github.q9029.webapp.filter.HerokuHttpsEnforceFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>httpsFilterChain</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+ -->
 
     <filter>
         <filter-name>encodingFilterChain</filter-name>

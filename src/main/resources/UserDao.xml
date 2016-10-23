@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+
+    <comment>ユーザ情報</comment>
+
+    <entry key="selectAll">
+        <![CDATA[
+          SELECT
+            id,
+            name,
+            enabled,
+            CASE role
+              WHEN '1' THEN 'ROLE_ADMIN'
+              WHEN '2' THEN 'ROLE_USER'
+            END authority,
+            TO_CHAR(registered, 'YYYY/MM/DD HH24:MI:SS') AS registered
+          FROM
+            accounts
+        ]]>
+    </entry>
+    <entry key="select">
+        <![CDATA[
+        SELECT
+            id,
+            name,
+            enabled,
+            CASE role
+              WHEN '1' THEN 'ROLE_ADMIN'
+              WHEN '2' THEN 'ROLE_USER'
+            END authority,
+            TO_CHAR(registered, 'YYYY/MM/DD HH24:MI:SS') AS registered
+        FROM
+            accounts
+        WHERE
+            id = ?
+        ]]>
+    </entry>
+</properties>

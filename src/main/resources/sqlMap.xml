@@ -1,0 +1,18 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="sqlMap" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="locations">
+            <map>
+                <entry key="com.github.q9029.webapp.dao.UsersDao.selectAll">
+                    <value>classpath:sqlMap/com/github/q9029/webapp/dao/UsersDao/selectAll.sql</value>
+                </entry>
+                <entry key="com.github.q9029.webapp.dao.UsersDao.select">
+                    <value>classpath:sqlMap/com/github/q9029/webapp/dao/UsersDao/select.sql</value>
+                </entry>
+            </map>
+        </property>
+    </bean>
+</beans>
